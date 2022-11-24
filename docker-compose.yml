@@ -1,0 +1,26 @@
+version: "3.8"
+
+networks: 
+  monitoring:
+    name: monitoring-ynov
+    external: true
+
+services:
+  loki:
+    image: grafana/loki:2.6.1
+    ports:
+      - "3100:3100"
+    command: -config.file=/etc/loki/local-config.yaml
+    networks:
+      - monitoring
+
+  promtail:
+    image: grafana/promtail:2.6.1
+    volumes:
+      - /var/log:/var/log
+      - ./log:/var/custom
+      - ./config:/var/conf
+    command: -config.file=/var/conf/prom-config.yml
+    networks:
+      - monitoring
+    
