@@ -8,6 +8,7 @@ const app = express()
 const port = 6969
 
 // 🔔 Les deux fichiers doivent être dans le dossier log du projet
+// Si vous utilisez Windows, pensez à inverser les slashs (je crois)
 const errorFile = 'log/ynov-error.log';
 const infoFile = 'log/ynov-info.log'
 
