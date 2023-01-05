@@ -12,7 +12,7 @@ const errorFile = 'log/ynov-error.log';
 const infoFile = 'log/ynov-info.log'
 
 
-// Créer un trasnports winston qui écrit dans le fichier définit dans la var infofile que c'est un log d'info
+// Créer un transport winston qui écrit dans le fichier définit dans la var infoFile si c'est une info
 // Dans le même logger créer un trasnports qui écrit dans le fichier définit dans errorFile si c'est en erreur
 // C'est dans le doc ;) https://github.com/winstonjs/winston
 const logInfo = winston.createLogger({
